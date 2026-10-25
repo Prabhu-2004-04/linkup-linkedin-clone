@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LinkedIn-inspired professional network and job portal UI practice project.">
+  <title>LinkUp — Professional Network UI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a href="#home" class="brand"><span class="brand-icon">in</span><span class="brand-name">LinkUp</span></a>
+    <label class="global-search"><span>⌕</span><input id="globalSearch" type="search" placeholder="Search jobs, roles, companies..." aria-label="Search jobs, roles, companies"><button id="clearSearch" type="button" aria-label="Clear search">×</button></label>
+    <nav class="top-nav"><a href="#home"><span>⌂</span>Home</a><a href="#network"><span>♧</span>My Network</a><a href="#jobs" class="selected"><span>▣</span>Jobs</a><a href="#learning"><span>▤</span>Learning</a><button id="meBtn"><span class="me-avatar">P</span>Me⌄</button></nav>
+  </header>
+
+  <main class="layout" id="home">
+    <aside class="left-column">
+      <section class="profile-card">
+        <div class="cover"></div><div class="profile-info"><div class="profile-avatar">P</div><h2>Prabanjan U V</h2><p>IT Student | Java Full Stack Learner</p><small>Bengaluru, Karnataka, India</small></div>
+        <div class="profile-stats"><span>Profile viewers</span><b>124</b><span>Post impressions</span><b>318</b></div>
+        <a class="premium-link" href="#jobs">⌑ &nbsp; Explore career opportunities</a>
+      </section>
+      <section class="sidebar-card" id="network"><b>Manage your network</b><a href="#jobs">Connections <strong>84</strong></a><a href="#jobs">Saved jobs <strong id="savedCountSide">0</strong></a><a href="#jobs">Job alerts <strong>3</strong></a></section>
+      <section class="sidebar-card mini-card"><b>Discover more</b><p>Find roles that match your skills and career goals.</p><a href="#jobs" class="text-link">Explore jobs →</a></section>
+    </aside>
+
+    <section class="center-column">
+      <section class="composer"><div class="composer-top"><div class="profile-avatar small-avatar">P</div><button id="openPost">Start a post, ask a question, or share an update...</button></div><div class="composer-options"><button id="photoBtn"><span class="green">▧</span> Media</button><button id="eventBtn"><span class="orange">▦</span> Event</button><button id="writePost"><span class="blue">✎</span> Write article</button></div></section>
+
+      <div class="feed-tools"><span>Suggested for you</span><span class="feed-line"></span><button id="sortFeed">Most relevant⌄</button></div>
+      <article class="feed-post"><header><div class="company-logo logo-blue">T</div><div><b>Tech Community</b><small>Professional learning · 2h</small></div><button class="more">•••</button></header><p>Building your skills is a journey. Pick one concept, practice it, and create something you can show. What are you working on this week?</p><div class="post-tags"><span>#Java</span><span>#WebDevelopment</span><span>#CareerGrowth</span></div><div class="post-actions"><button class="post-like">♡ <span>Like</span></button><button class="comment-action">▢ Comment</button><button class="share-action">➤ Share</button></div><div class="comment-box"><input placeholder="Add a comment..." aria-label="Add a comment"><button>Post</button></div></article>
+      <article class="feed-post"><header><div class="company-logo logo-orange">✦</div><div><b>Early Career Network</b><small>Community post · 5h</small></div><button class="more">•••</button></header><p>Interview tip: don't just list a technology on your resume. Explain what you built with it, what problem it solved, and what you learned along the way.</p><div class="post-tags"><span>#InterviewPrep</span><span>#Freshers</span></div><div class="post-actions"><button class="post-like">♡ <span>Like</span></button><button class="comment-action">▢ Comment</button><button class="share-action">➤ Share</button></div><div class="comment-box"><input placeholder="Add a comment..." aria-label="Add a comment"><button>Post</button></div></article>
+
+      <section class="jobs-section" id="jobs">
+        <div class="jobs-heading"><div><p class="eyebrow">CAREER OPPORTUNITIES</p><h1>Jobs picked for your next step</h1><p>Browse roles and open official company career portals to check current openings.</p></div><span class="jobs-badge">ROLE LINKS ↗</span></div>
+        <div class="job-filters"><button class="filter active" data-filter="all">All roles</button><button class="filter" data-filter="developer">Developer</button><button class="filter" data-filter="internship">Internships</button><button class="filter" data-filter="data">Data & QA</button></div>
+        <div class="job-list" id="jobList">
+          <article class="job-card" data-category="developer internship" data-search="software engineer developer intern amazon java full stack">
+            <div class="company-logo amazon">a</div><div class="job-content"><h3>Software Development Engineer / Intern</h3><p>Amazon <span>·</span> India</p><small>Software · Entry level / Internship (availability varies)</small><div class="job-tags"><span>Java</span><span>Data Structures</span><span>Problem Solving</span></div><a class="portal-link" href="https://www.amazon.jobs/en/" target="_blank" rel="noopener noreferrer">Open Amazon Careers <span>↗</span></a></div><button class="save-job" aria-label="Save Amazon job" aria-pressed="false">♧</button>
+          </article>
+          <article class="job-card" data-category="developer internship" data-search="software engineer developer intern microsoft java web development">
+            <div class="company-logo microsoft"><span></span><span></span><span></span><span></span></div><div class="job-content"><h3>Software Engineer / Explore Intern</h3><p>Microsoft <span>·</span> India</p><small>Engineering · Early career / Internship (availability varies)</small><div class="job-tags"><span>Programming</span><span>Algorithms</span><span>Cloud</span></div><a class="portal-link" href="https://careers.microsoft.com/v2/global/en/home.html" target="_blank" rel="noopener noreferrer">Open Microsoft Careers <span>↗</span></a></div><button class="save-job" aria-label="Save Microsoft job" aria-pressed="false">♧</button>
+          </article>
+          <article class="job-card" data-category="developer internship" data-search="software developer intern google java frontend">
+            <div class="company-logo google">G</div><div class="job-content"><h3>Software Engineer / Student Opportunities</h3><p>Google <span>·</span> India</p><small>Software engineering · Student and early-career roles</small><div class="job-tags"><span>DSA</span><span>Software</span><span>Systems</span></div><a class="portal-link" href="https://www.google.com/about/careers/applications/" target="_blank" rel="noopener noreferrer">Open Google Careers <span>↗</span></a></div><button class="save-job" aria-label="Save Google job" aria-pressed="false">♧</button>
+          </article>
+          <article class="job-card" data-category="developer" data-search="java developer full stack software engineer infosys">
+            <div class="company-logo infosys">i</div><div class="job-content"><h3>Systems Engineer / Java Developer</h3><p>Infosys <span>·</span> India</p><small>Software and consulting · Check role requirements</small><div class="job-tags"><span>Java</span><span>SQL</span><span>Web</span></div><a class="portal-link" href="https://career.infosys.com/" target="_blank" rel="noopener noreferrer">Open Infosys Careers <span>↗</span></a></div><button class="save-job" aria-label="Save Infosys job" aria-pressed="false">♧</button>
+          </article>
+          <article class="job-card" data-category="developer internship" data-search="tcs ninja digital developer software engineer fresher">
+            <div class="company-logo tcs">TCS</div><div class="job-content"><h3>Graduate Trainee / Software Roles</h3><p>Tata Consultancy Services <span>·</span> India</p><small>Graduate hiring · Check current eligibility and hiring cycle</small><div class="job-tags"><span>Freshers</span><span>Programming</span><span>IT</span></div><a class="portal-link" href="https://www.tcs.com/careers" target="_blank" rel="noopener noreferrer">Open TCS Careers <span>↗</span></a></div><button class="save-job" aria-label="Save TCS job" aria-pressed="false">♧</button>
+          </article>
+          <article class="job-card" data-category="data" data-search="quality assurance tester test engineer data analyst accenture">
+            <div class="company-logo accenture">>A</div><div class="job-content"><h3>Quality Engineer / Analyst</h3><p>Accenture <span>·</span> India</p><small>Quality engineering and analytics · Search for junior roles</small><div class="job-tags"><span>Testing</span><span>SQL</span><span>Analysis</span></div><a class="portal-link" href="https://www.accenture.com/in-en/careers" target="_blank" rel="noopener noreferrer">Open Accenture Careers <span>↗</span></a></div><button class="save-job" aria-label="Save Accenture job" aria-pressed="false">♧</button>
+          </article>
+          <article class="job-card" data-category="data internship" data-search="data analyst intern data science wipro">
+            <div class="company-logo wipro">w</div><div class="job-content"><h3>Data Analyst / Early Career Roles</h3><p>Wipro <span>·</span> India</p><small>Data and technology · Check current openings</small><div class="job-tags"><span>SQL</span><span>Python</span><span>Analytics</span></div><a class="portal-link" href="https://careers.wipro.com/" target="_blank" rel="noopener noreferrer">Open Wipro Careers <span>↗</span></a></div><button class="save-job" aria-label="Save Wipro job" aria-pressed="false">♧</button>
+          </article>
+          <article class="job-card" data-category="internship developer" data-search="ibm internship software developer data engineer">
+            <div class="company-logo ibm">IBM</div><div class="job-content"><h3>Software Developer / Intern</h3><p>IBM <span>·</span> India</p><small>Software, cloud, and data · Student roles may vary</small><div class="job-tags"><span>Java</span><span>Cloud</span><span>Data</span></div><a class="portal-link" href="https://www.ibm.com/careers" target="_blank" rel="noopener noreferrer">Open IBM Careers <span>↗</span></a></div><button class="save-job" aria-label="Save IBM job" aria-pressed="false">♧</button>
+          </article>
+        </div>
+        <p class="job-disclaimer">These are links to official company career portals, not guarantees of a currently open vacancy. Search the role title on each portal and verify eligibility, location, and application dates.</p>
+      </section>
+    </section>
+
+    <aside class="right-column">
+      <section class="news-card"><h2>Career tips</h2><ul><li><b>Build proof of skills</b><small>Projects make your resume easier to discuss.</small></li><li><b>Tailor each application</b><small>Match your resume to the role description.</small></li><li><b>Use official portals</b><small>Check the employer's own website before applying.</small></li></ul><a href="#jobs" class="text-link">Explore roles →</a></section>
+      <section class="ad-card"><small>LINKUP CAREER GUIDE</small><div class="ad-art">YOUR<br>NEXT<br><span>MOVE.</span></div><p>Find a role. Learn the skills. Make it happen.</p><a href="#jobs">Browse roles</a></section>
+      <p class="right-footer">About · Accessibility · Help Center<br>Privacy & Terms · Advertising<br><br>LinkUp UI concept · 2026</p>
+    </aside>
+  </main>
+
+  <dialog id="postDialog" class="post-dialog"><form id="postForm"><header><b>Create a post</b><button type="button" id="closeDialog">×</button></header><textarea id="postText" required maxlength="280" placeholder="Share a project, learning update, or career goal..."></textarea><footer><small id="charCount">0 / 280</small><button type="submit">Post</button></footer><small class="dialog-note">Demo only. The post is added locally and disappears after refresh.</small></form></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
